@@ -10,7 +10,7 @@ export default function BouyPanel() {
 
     useEffect(() => {
       // Fetch buoy IDs from the API endpoint
-      fetch('http://127.0.0.1:8000/bouy_id/')
+      fetch('http://13.201.112.178:8000/bouy_id/')
         .then(response => response.json())
         .then(data => {
           // Set the fetched buoy IDs in state
