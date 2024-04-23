@@ -154,8 +154,8 @@ export default function ViewReport() {
         <div className="report-info">
           <svg
             width="300"
-            height="480"
-            viewBox="-40 -40 501 634"
+            height="520"
+            viewBox="-40 110 501 634"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
