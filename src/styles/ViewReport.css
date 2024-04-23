@@ -2,9 +2,12 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: url("../assets/main-bg.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: radial-gradient(circle at center 50%, #018C8C, #022F43);
+}
+
+.report-header {
+    height: 4px;
+    margin: 0 auto;
 }
 
 .layout-row {
