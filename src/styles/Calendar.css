@@ -1,0 +1,128 @@
+.calendar-container {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: url("../assets/main-bg.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.calendar-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #e7e7e730;
+    border-radius: 24px;
+    border: 6px solid transparent;
+    box-shadow: 2px 2px 1px #0CFEFF;
+    padding: 20px 60px;
+}
+
+.card-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+}
+
+.header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #fff;
+    justify-content: space-between;
+}
+
+.header button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.range-box {
+    display: inline-flex;
+    gap: 10px;
+    margin-right: 30px;
+}
+
+.years-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.years-container .current-year {
+    background: #e7e7e730;
+    border: none;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 10px 16px;
+    cursor: pointer;
+}
+
+.years-container .year {
+    background: none;
+    border: none;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 10px 16px;
+    cursor: pointer;
+}
+
+.months-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.months-container button {
+    background: #e7e7e730;
+    border: none;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 10px 16px;
+    cursor: pointer;
+}
+
+.months-container .month {
+    padding: 5px 10px;
+    margin: 5px;
+    cursor: pointer;
+    background: none;
+    cursor: pointer;
+}
+
+.dates-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 50px;
+}
+
+.date {
+    padding: 5px 10px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.dates-container .selected {
+    background: #e7e7e730;
+    border-radius: 6px;
+    padding: 5px 10px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.other-month {
+    color: #ccc;
+}

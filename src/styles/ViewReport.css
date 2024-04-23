@@ -1,0 +1,25 @@
+.report-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: url("../assets/main-bg.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.layout-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.plot-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    align-items: center;
+    margin: 50px 0px 0px 10px;
+}
+
+.report-info {
+    color: #fff;
+}

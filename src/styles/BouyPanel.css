@@ -1,0 +1,20 @@
+.panel-container {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: url("../assets/main-bg.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.grid-item {
+    width: 380px;
+    cursor: pointer;
+}
