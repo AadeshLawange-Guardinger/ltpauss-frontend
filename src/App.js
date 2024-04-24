@@ -8,6 +8,7 @@ import PolarChart from "./components/PolarChart";
 import ViewReport from "./components/ViewReport";
 import BouyPanel from "./components/BouyPanel";
 import Calendar from "./components/Calendar";
+import Loading from "./components/Loading";
 import "./App.css";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="/viewreport" element={<ViewReport />} />
           <Route path="/panel" element={<BouyPanel />}/>
           <Route path="/calendar" element={<Calendar />}/>
+          <Route path="/loading" element={<Loading />}/>
         </Routes>
       </div>
     </Router>

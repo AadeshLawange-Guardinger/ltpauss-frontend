@@ -23,7 +23,7 @@ function Login() {
   const handleLogin = async () => {
     try {
       console.log(username, password);
-      const response = await fetch("http://13.201.112.178:8000/login/", {
+      const response = await fetch("http://13.202.7.118:8000/login/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
