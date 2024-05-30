@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate hook
 import "../styles/Login.css"; // Import CSS file for styling
 import { loading_gif } from "../assets";
@@ -9,18 +10,8 @@ function Login() {
   const [showGif, setShowGif] = useState(false); // State to control GIF visibility
   const navigate = useNavigate(); // Initialize navigate hook
 
-  useEffect(() => {
-    if (showGif) {
-      const timer = setTimeout(() => {
-        handleLogin(); // Call handleLogin function after 3 seconds
-        setShowGif(false); // Hide the GIF after calling handleLogin
-      }, 800);
-
-      return () => clearTimeout(timer); // Clean up the timer on component unmount
-    }
-  }, [showGif]);
-
   const handleLogin = async () => {
+    setShowGif(true);
     try {
       console.log(username, password);
       const response = await fetch("http://13.202.7.118:8000/login/", {
@@ -32,9 +23,10 @@ function Login() {
       });
 
       if (!response.ok) {
+        setShowGif(false);
         throw new Error("Failed to log in");
       }
-
+      setShowGif(false);
       // Successful login logic (navigate to dashboard)
       navigate("/panel");
     } catch (error) {
@@ -44,7 +36,8 @@ function Login() {
   };
 
   const handleLoginClick = () => {
-    setShowGif(true); // Show the GIF on button click
+    handleLogin();
+    // Show the GIF on button click
   };
 
   return (

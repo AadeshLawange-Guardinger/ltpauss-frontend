@@ -1,0 +1,104 @@
+.print-div {
+    min-height: 100vh;
+    background: #fff;
+    padding: 4px;
+}
+
+.print-report-header {
+    background: #004367;
+    padding: 6px;
+    color: #fff;
+}
+
+.print-report-header img {
+    width: 60px;
+    margin-left: 20px;
+}
+
+.print-plot-container {
+    display: flex;
+    margin: 0px 0px 20px 122px;
+    flex-direction: column;
+    width: 82%;
+    border: 2px solid black;
+}
+
+.print-report-info {
+    display: flex;
+    flex-direction: column;
+    color: #565656;
+    justify-content: center;
+    width: 80.7%;
+    margin: 0px 0px 30px 122px;
+    border: 2px solid #000000;
+    padding: 10px;
+    text-align: left;
+}
+
+.print-head {
+    width: 82.3%;
+    height: 80px;
+    margin-left: 122px;
+    /* border-bottom: 2px solid black; */
+    margin-bottom: 25px;
+}
+
+.print-head h1 {
+    text-align: left;
+    color: #565656;
+    font-size: 70px;
+}
+
+.print-grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0px;
+}
+
+.print-div button {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    padding: 10px 20px;
+    border: 2px solid #ffffff;
+    border-radius: 6px;
+    background: none;
+    color: #ffffff;
+    font-size: large;
+    cursor: pointer;
+}
+
+.print-table td {
+    text-align: left;
+    padding: 0px;
+}
+
+.print-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.print-table td {
+    padding: 10px;
+    border: 1px solid #bebebe;
+}
+
+.print-table h4 {
+    margin: 0;
+}
+
+.remark-print {
+    height: 200px;
+    text-align: left;
+    font-size: 25px;
+    margin-left: 8%;
+    line-height: 10px;
+    font-weight: 500;
+}
+
+.authorization-notice {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    margin: 20px;
+    text-align: center;
+}

@@ -11,12 +11,10 @@ function LofarPlot({ stftData, dimensions }) {
     return <p className="error">No valid data available</p>;
   }
 
-  console.log(stftData);
-
   return (
     <svg
-      width="600"
-      height="354"
+      width="550"
+      height="300"
       viewBox="0 0 651 354"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +57,7 @@ function LofarPlot({ stftData, dimensions }) {
               type: "heatmap",
               colorbar: {
                 title: {
-                  text: "dBrms ref 1 μPa/√Hz",
+                  text: "dBrms ref 1 μPa/Hz",
                   side: "right",
                 },
               },

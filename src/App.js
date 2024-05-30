@@ -9,6 +9,7 @@ import ViewReport from "./components/ViewReport";
 import BouyPanel from "./components/BouyPanel";
 import Calendar from "./components/Calendar";
 import Loading from "./components/Loading";
+import Print from "./components/Print";
 import "./App.css";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path="/panel" element={<BouyPanel />}/>
           <Route path="/calendar" element={<Calendar />}/>
           <Route path="/loading" element={<Loading />}/>
+          <Route path="/print" element={<Print />}/>
         </Routes>
       </div>
     </Router>

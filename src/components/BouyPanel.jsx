@@ -1,7 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import { useNavigate  } from "react-router-dom";
 import "../styles/BouyPanel.css";
-import {loading_gif} from "../assets";
+import {loading_gif,logout} from "../assets";
 
 export default function BouyPanel() {
     const [buoyIds, setBuoyIds] = useState([]);
@@ -55,6 +56,10 @@ export default function BouyPanel() {
       else {
         alert("BUOY IS INACTIVE, CHOOSE THE ACTIVE ONE.")
       }
+  };
+
+  const handleLogout = () => {
+    navigate("/");
   };
 
   return (
@@ -116,6 +121,9 @@ export default function BouyPanel() {
           <img src={loading_gif} alt="Loading..." />
         </div>
       )}
+      <div className="btn-container">
+        <img onClick={handleLogout} src={logout} alt="" srcset="" />
+      </div>
     </div>
   );
 }

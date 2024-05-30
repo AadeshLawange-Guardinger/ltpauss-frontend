@@ -12,12 +12,13 @@
 
 .layout-row {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .plot-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     grid-gap: 10px;
     align-items: center;
     margin: 50px 0px 0px 10px;
@@ -27,6 +28,6 @@
     color: #fff;
     justify-content: center;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin: 0 auto;
 }

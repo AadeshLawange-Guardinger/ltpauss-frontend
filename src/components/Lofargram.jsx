@@ -151,7 +151,7 @@ function Lofargram() {
                   type: "heatmap",
                   colorbar: {
                     title: {
-                      text: "dB rms ref 1 μ Pa Per Square root of Hz",
+                      text: "dB rms ref 1 μ Pa/Hz",
                       side: "right",
                     },
                   },

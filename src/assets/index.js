@@ -13,6 +13,7 @@ import download_arrow from "./download-arrow.svg";
 import logout from "./logout.svg";
 import login from "./login.svg";
 import loading_gif from "./loading_gif.gif"
+import wesee_logo from "./wesee_logo.png";
 
 export{
     btn_bg,
@@ -30,4 +31,5 @@ export{
     logout,
     login,
     loading_gif,
+    wesee_logo,
 }
