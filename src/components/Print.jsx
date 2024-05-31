@@ -9,7 +9,7 @@ import "leaflet/dist/leaflet.css";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import "../styles/Print.css"; // Import CSS for blinking effect
-import { wesee_logo } from "../assets";
+import { wesee_logo, homepage, print } from "../assets";
 
 function transposeMatrix(matrix) {
   return matrix[0].map((_, colIndex) => matrix.map((row) => row[colIndex]));
@@ -62,17 +62,18 @@ export default function Print() {
   const data = [
     {
       type: "scatterpolar",
-      r: [0.8], // Magnitude of the direction
+      r: [1], // Magnitude of the direction
       theta: [doaPlot], // Direction of arrival
       mode: "markers",
       marker: {
-        size: 10,
+        size: 20,
+        symbol: "point",
         color: "#018C8C", // Customize the color of the marker
       },
     },
     {
       type: "scatterpolar",
-      r: [0, 0.75], // Line from origin to the point
+      r: [0, 1], // Line from origin to the point
       theta: [0, doaPlot],
       mode: "lines",
       line: {
@@ -215,6 +216,10 @@ export default function Print() {
       .catch((error) => {
         console.error("Error generating PDF:", error);
       });
+  };
+
+  const handleHomepage = () => {
+    navigate("/dashboard");
   };
 
   return (
@@ -431,9 +436,14 @@ export default function Print() {
       {isLoading ? (
         <div>Loading...</div>
       ) : (
-        <button className="print-btn" onClick={handlePrintRequest}>
-          Print Report
-        </button>
+        <div>
+          <button className="print-btn" onClick={handlePrintRequest}>
+            <img src={print} alt="" srcset="" style={{width:"25px"}}/>
+          </button>
+          <button className="home-btn" style={{right:"60px"}} onClick={handleHomepage}>
+          <img src={homepage} alt="" srcset="" style={{width:"25px"}}/>
+          </button>
+        </div>
       )}
     </div>
   );

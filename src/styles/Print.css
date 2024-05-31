@@ -58,13 +58,18 @@
     position: absolute;
     top: 30px;
     right: 20px;
-    padding: 10px 20px;
-    border: 2px solid #3b6cff;
-    border-radius: 6px;
+    padding: 1px 2px;
+    border: none;
     background: none;
     color: #3b6cff;
     font-size: large;
     cursor: pointer;
+}
+
+.print-div button:hover {
+    border: 1px solid rgb(95, 95, 95);
+    border-radius: 50%;
+    animation: ease-in 1.5s infinite alternate;
 }
 
 .print-table td {
@@ -117,3 +122,4 @@
     background-repeat: no-repeat;
     border-radius: 50%;
 }
+
