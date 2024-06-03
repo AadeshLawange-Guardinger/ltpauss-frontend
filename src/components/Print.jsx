@@ -9,7 +9,8 @@ import "leaflet/dist/leaflet.css";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import "../styles/Print.css"; // Import CSS for blinking effect
-import { wesee_logo, homepage, print } from "../assets";
+import { wesee_logo, homepage, print, compass } from "../assets";
+import Loading from "./Loading";
 
 function transposeMatrix(matrix) {
   return matrix[0].map((_, colIndex) => matrix.map((row) => row[colIndex]));
@@ -24,10 +25,13 @@ export default function Print() {
   const [bouyId, setBouyId] = useState("");
   const [packetId, setPacketId] = useState("");
   const [doa, setDoa] = useState("");
+  const [showLoading, setShowLoading] = useState(false);
   const [isLoading, setIsLoading] = useState(true); // Track loading state
   const location = useLocation();
   const { state } = location;
   const navigate = useNavigate();
+
+  const [angle, setAngle] = useState(0);
 
   useEffect(() => {
     if (state) {
@@ -58,70 +62,14 @@ export default function Print() {
   // Remove the degree symbol from doa
   let doaPlot = doa.replace("°", "");
 
-  // Prepare data for the polar chart
-  const data = [
-    {
-      type: "scatterpolar",
-      r: [1], // Magnitude of the direction
-      theta: [doaPlot], // Direction of arrival
-      mode: "markers",
-      marker: {
-        size: 20,
-        symbol: "point",
-        color: "#018C8C", // Customize the color of the marker
-      },
-    },
-    {
-      type: "scatterpolar",
-      r: [0, 1], // Line from origin to the point
-      theta: [0, doaPlot],
-      mode: "lines",
-      line: {
-        color: "red", // Color of the line
-        dash: "dot", // Make the line dotted
-      },
-    },
-  ];
-
-  // Layout configuration for the polar chart
-  const layout = {
-    polar: {
-      radialaxis: {
-        visible: true,
-        range: [0, 1], // Set the range of radial axis
-        tickvals: [0, 90, 180, 270], // Define the tick values
-      },
-    },
-    // Hide legends
-    showlegend: false,
-    // Hide the coordinates
-    hoverinfo: "none",
-    // Configure modebar to be hidden
-    config: {
-      displayModeBar: false,
-    },
-    width: 1250,
-    height: 508,
-    margin: {
-      t: 50,
-      b: 50,
-      l: 50,
-      r: 50,
-    },
-    font: {
-      color: "#000000",
-    },
-    plot_bgcolor: "transparent",
-    paper_bgcolor: "transparent",
-  };
-
   // Function to handle when all plots are rendered
   const handlePlotsLoaded = () => {
     setIsLoading(false);
   };
 
   const handlePrintRequest = () => {
-    const elements = document.querySelectorAll(".page-1, .page-2, .page-3");
+    setShowLoading(true);
+    const elements = document.querySelectorAll(".page-1, .page-2");
     const timestamp = new Date()
       .toLocaleString("en-US", {
         year: "numeric",
@@ -181,7 +129,7 @@ export default function Print() {
             const imgData = canvas.toDataURL("image/png");
             const width = 210; // Width of A4 in mm
             const height = (canvas.height * width) / canvas.width; // Maintain aspect ratio
-
+            //console.log("Element:", element,", Index:", index)
             if (index !== 0) {
               pdf.addPage(); // New page for subsequent elements
             }
@@ -206,12 +154,24 @@ export default function Print() {
       })
       .then(() => {
         const storedData = localStorage.getItem("reportData");
-        pdf.save(`report_${bouyId}_${timestamp}.pdf`); // Download PDF
+        console.log(pdf);
+        pdf.addPage();
 
-        if (storedData) {
-          const data = JSON.parse(storedData);
-          navigate("/viewreport", { state: data }); // Pass data as state
-        }
+        // Add page-3 element after adding a new page
+        const page3Element = document.querySelector(".page-3");
+        html2canvas(page3Element, { useCORS: true }).then((canvas) => {
+          const imgData = canvas.toDataURL("image/png");
+          const width = 210; // Width of A4 in mm
+          const height = (canvas.height * width) / canvas.width; // Maintain aspect ratio
+          pdf.addImage(imgData, "PNG", 0, 20, width, height); // Add image to PDF
+          setShowLoading(false);
+          // Save PDF and navigate
+          pdf.save(`report_${bouyId}_${timestamp}.pdf`); // Download PDF
+          if (storedData) {
+            const data = JSON.parse(storedData);
+            navigate("/viewreport", { state: data }); // Pass data as state
+          }
+        });
       })
       .catch((error) => {
         console.error("Error generating PDF:", error);
@@ -369,13 +329,21 @@ export default function Print() {
           <div className="print-plot-container">
             <h1>Direction Of Arrival (DOA)</h1>
             {psdData && (
-              <Plot
-                className="plots-container"
-                data={data}
-                layout={layout}
-                config={{ displayModeBar: false }}
-              />
+              <div className="compass-container">
+                <div
+                  className="compass"
+                  style={{ transform: `rotate(${doaPlot}deg)` }}
+                >
+                  <div className="arrow"></div>
+                </div>
+                <img
+                  src={compass}
+                  alt="Compass Background"
+                  className="compass-background"
+                />
+              </div>
             )}
+            <div className="doa-label">Direction of Arrival: {doa}</div>
           </div>
         </div>
       </div>
@@ -428,6 +396,13 @@ export default function Print() {
                 </Marker>
               </MapContainer>
             )}
+            {mapData && (
+              <div className="map-marker">
+                <p>Latitude: {mapData.lat}</p>
+                <p>Longitude: {mapData.long}</p>
+                <p>Direction Of Arrival: {mapData.doa}</p>
+              </div>
+            )}
           </div>
           <div className="remark-print">Remarks:</div>
           <div className="authorization-notice">Authorized Signatory</div>
@@ -438,13 +413,18 @@ export default function Print() {
       ) : (
         <div>
           <button className="print-btn" onClick={handlePrintRequest}>
-            <img src={print} alt="" srcset="" style={{width:"25px"}}/>
+            <img src={print} alt="" srcset="" style={{ width: "25px" }} />
           </button>
-          <button className="home-btn" style={{right:"60px"}} onClick={handleHomepage}>
-          <img src={homepage} alt="" srcset="" style={{width:"25px"}}/>
+          <button
+            className="home-btn"
+            style={{ right: "60px" }}
+            onClick={handleHomepage}
+          >
+            <img src={homepage} alt="" srcset="" style={{ width: "25px" }} />
           </button>
         </div>
       )}
+      {showLoading && <Loading />}
     </div>
   );
 }

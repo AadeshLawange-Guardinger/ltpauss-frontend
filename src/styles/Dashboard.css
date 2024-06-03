@@ -239,3 +239,16 @@ img {
   font-size: 20px;
   color: #fff;
 }
+
+.arrow-dash {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 12px solid red;
+    position: absolute;
+    top: 14.5%;
+    left: 50%;
+    transform-origin: center bottom;
+    transform: translate(-50%, -100%);
+}

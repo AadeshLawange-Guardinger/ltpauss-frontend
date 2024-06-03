@@ -17,6 +17,7 @@ import wesee_logo from "./wesee_logo.png";
 import homepage from "./homepage.svg";
 import print from "./print.svg";
 import arrow from "./arrow.svg";
+import compass from "./compass.svg";
 
 export{
     btn_bg,
@@ -38,4 +39,5 @@ export{
     homepage,
     print,
     arrow,
+    compass,
 }
