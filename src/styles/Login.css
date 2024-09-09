@@ -1,5 +1,6 @@
 .login-container {
   background-image: url("../assets/login-bg.svg");
+  /* background-image: url("../assets/login-bg-v3.svg"); */
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;

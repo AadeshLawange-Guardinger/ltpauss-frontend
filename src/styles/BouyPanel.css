@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     background: url("../assets/main-bg.svg");
+    /* background: url("../assets/main-bg-v2.svg"); */
     background-repeat: no-repeat;
     background-size: cover;
 }

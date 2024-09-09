@@ -1,14 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.f9171bfb.css",
-    "main.js": "/static/js/main.a5db74d8.js",
+    "main.css": "/static/css/main.128d2f17.css",
+    "main.js": "/static/js/main.34f68328.js",
     "static/js/213.ab9994fb.chunk.js": "/static/js/213.ab9994fb.chunk.js",
     "static/js/732.11887481.chunk.js": "/static/js/732.11887481.chunk.js",
     "static/js/453.bc46723e.chunk.js": "/static/js/453.bc46723e.chunk.js",
     "static/media/loading_gif.gif": "/static/media/loading_gif.0632b1b624abbc097873.gif",
-    "static/media/login-bg.svg": "/static/media/login-bg.ac687c7e7a1131f74a38608285d8e15d.svg",
+    "static/media/compass.svg": "/static/media/compass.d1797f0e161125d46d4163429fc3e888.svg",
+    "static/media/login-bg.svg": "/static/media/login-bg.8017d6859cd6045e6197e403b7c4e243.svg",
+    "static/media/guardinger-logo.png": "/static/media/guardinger-logo.d3518ca1a37dfe3f5115.png",
     "static/media/dash-bg.svg": "/static/media/dash-bg.8f16d3b604ee6b2e4793d839bce0bfb9.svg",
     "static/media/wesee_logo.png": "/static/media/wesee_logo.2baef6747b8b2da064fb.png",
+    "static/media/login-bg-v2.svg": "/static/media/login-bg-v2.359ae709c84c145b3ee1.svg",
     "static/media/digital-7.ttf": "/static/media/digital-7.93911ab167c943140756.ttf",
     "static/media/main-bg.svg": "/static/media/main-bg.660a5cf776b31412ba0a.svg",
     "static/media/total-packets.svg": "/static/media/total-packets.1acea9a2c923ecbfd72847151f882e09.svg",
@@ -17,21 +20,26 @@
     "static/media/home-img.svg": "/static/media/home-img.0250097f5abcfe6aa6feb8b64d854867.svg",
     "static/media/login.svg": "/static/media/login.77f0058244ccb4d59eae661064bdd6f1.svg",
     "static/media/btn.svg": "/static/media/btn.3c3d7b2166db82489c0740b56bff3697.svg",
+    "static/media/main-bg-v2.svg": "/static/media/main-bg-v2.2ccfeb871f7facc515e4.svg",
     "static/media/input-bg.svg": "/static/media/input-bg.f1938b23b68cbea5e35ddeccf3b97312.svg",
     "static/media/plot-bg.svg": "/static/media/plot-bg.af9aaac85f9fb3e16fe97a2a92129007.svg",
     "static/media/view-btn.svg": "/static/media/view-btn.9298031f02dc81bee91eda47d3c10cfa.svg",
     "static/media/view-plot.svg": "/static/media/view-plot.19231143ac44375c061c40f1f8cecd21.svg",
     "static/media/logout.svg": "/static/media/logout.4fbff1636436b8d3c59fccbd48ac58c7.svg",
     "index.html": "/index.html",
+    "static/media/map_loc.svg": "/static/media/map_loc.57660a213a2a866706a7.svg",
+    "static/media/print.svg": "/static/media/print.35716a0b16670af5e36edc5ebee626d5.svg",
     "static/media/download-arrow.svg": "/static/media/download-arrow.d4f121088cbdc76790a60cc96df497dc.svg",
-    "main.f9171bfb.css.map": "/static/css/main.f9171bfb.css.map",
-    "main.a5db74d8.js.map": "/static/js/main.a5db74d8.js.map",
+    "static/media/homepage.svg": "/static/media/homepage.7d592d5f1acaeda6e8fd9f9b39fb13fc.svg",
+    "static/media/arrow.svg": "/static/media/arrow.65692986547eeb8818d09611c574ea12.svg",
+    "main.128d2f17.css.map": "/static/css/main.128d2f17.css.map",
+    "main.34f68328.js.map": "/static/js/main.34f68328.js.map",
     "213.ab9994fb.chunk.js.map": "/static/js/213.ab9994fb.chunk.js.map",
     "732.11887481.chunk.js.map": "/static/js/732.11887481.chunk.js.map",
     "453.bc46723e.chunk.js.map": "/static/js/453.bc46723e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f9171bfb.css",
-    "static/js/main.a5db74d8.js"
+    "static/css/main.128d2f17.css",
+    "static/js/main.34f68328.js"
   ]
 }
