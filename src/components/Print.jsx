@@ -9,7 +9,7 @@ import "leaflet/dist/leaflet.css";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import "../styles/Print.css"; // Import CSS for blinking effect
-import { wesee_logo, homepage, print, compass } from "../assets";
+import { wesee_logo, guardinger_logo, homepage, print, compass } from "../assets";
 import Loading from "./Loading";
 
 function transposeMatrix(matrix) {
@@ -91,7 +91,7 @@ export default function Print() {
     const addHeader = (pdf, img) => {
       pdf.setFillColor(255, 255, 255); // White background
       pdf.rect(0, 0, 210, 30, "F"); // Rectangle for header background
-      pdf.addImage(img, "JPEG", 10, 1, 32, 35); // Logo image
+      pdf.addImage(img, "JPEG", 10, 1, 52, 25); // Logo image
 
       const dateString = new Date().toLocaleDateString("en-US", {
         year: "numeric",
@@ -122,7 +122,7 @@ export default function Print() {
       });
     };
 
-    loadImage(wesee_logo)
+    loadImage(guardinger_logo)
       .then((img) => {
         const promises = Array.from(elements).map((element, index) =>
           html2canvas(element, { useCORS: true }).then((canvas) => {
@@ -185,7 +185,7 @@ export default function Print() {
   return (
     <div className="print-div">
       <div className="print-report-header">
-        <img src={wesee_logo} alt="" srcset="" />
+        <img src={guardinger_logo} alt="" srcset="" style={{width:"300px"}} />
       </div>
       <div className="page-1">
         <div className="print-head">
@@ -197,10 +197,10 @@ export default function Print() {
               <table className="data-table print-table">
                 <tr>
                   <td>
-                    <h4>Buoy ID</h4>
+                    <h4>DEVICE ID</h4>
                   </td>
                   <td>
-                    <h4>{bouyId}</h4>
+                    <h4>iNGT100-D001</h4>
                   </td>
                 </tr>
                 <tr>
@@ -379,7 +379,7 @@ export default function Print() {
             )}
           </div>
           <div className="print-plot-container">
-            <h1>Sonabuoy Location</h1>
+            <h1>iNDISONIC GT 100 Location</h1>
             {mapData && (
               <MapContainer
                 className="world-map-container dark"

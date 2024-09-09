@@ -11,6 +11,8 @@ export default function BouyPanel() {
     const [showLoading, setShowLoading] = useState(false)
     const navigate = useNavigate();
 
+    const bouys = ["iNGT100-D001", "iNGT100-D002", "iNGT100-D003", "iNGT100-D004", "iNGT100-D005", "iNGT100-D006"];
+
     useEffect(() => {
       setShowLoading(true);
       // Fetch buoy IDs from the API endpoint
@@ -104,8 +106,8 @@ export default function BouyPanel() {
                     <stop offset="1" stop-color="#004970" stop-opacity="0"/>
                     </linearGradient>
                     </defs>
-                    <text x="75" y="21" textAnchor="middle" alignmentBaseline="middle" fill="#89D2FF" fontSize="25">
-                    {buoy.buoy_id}
+                    <text x="85" y="21" textAnchor="middle" alignmentBaseline="middle" fill="#89D2FF" fontSize="22">
+                    {bouys[index]}
                     </text>
                     {buoy.status === 1 && (
                     <svg x="100" y="18" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">

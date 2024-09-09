@@ -187,7 +187,7 @@ export default function Dashboard() {
         <table className="data-table">
           <thead>
             <tr>
-              <th>BUOY ID</th>
+              <th>DEVICE ID</th>
               <th>Message ID</th>
               <th>Message Recorded At</th>
               <th>Transmission Date and Time</th>
@@ -197,7 +197,7 @@ export default function Dashboard() {
           <tbody>
             {tableData.map((record, index) => (
               <tr key={index}>
-                <td>AS-D 6891</td>
+                <td>iNGT100-D001</td>
                 <td>
                   {record.momsn_start} - {record.momsn_end}
                 </td>

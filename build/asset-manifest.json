@@ -1,12 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.f9171bfb.css",
-    "main.js": "/static/js/main.a5db74d8.js",
+    "main.css": "/static/css/main.212cac2f.css",
+    "main.js": "/static/js/main.a5774ff5.js",
     "static/js/213.ab9994fb.chunk.js": "/static/js/213.ab9994fb.chunk.js",
     "static/js/732.11887481.chunk.js": "/static/js/732.11887481.chunk.js",
     "static/js/453.bc46723e.chunk.js": "/static/js/453.bc46723e.chunk.js",
     "static/media/loading_gif.gif": "/static/media/loading_gif.0632b1b624abbc097873.gif",
-    "static/media/login-bg.svg": "/static/media/login-bg.ac687c7e7a1131f74a38608285d8e15d.svg",
+    "static/media/compass.svg": "/static/media/compass.d1797f0e161125d46d4163429fc3e888.svg",
+    "static/media/login-bg.svg": "/static/media/login-bg.8017d6859cd6045e6197e403b7c4e243.svg",
+    "static/media/guardinger-logo.png": "/static/media/guardinger-logo.c16bed600390f126d483.png",
     "static/media/dash-bg.svg": "/static/media/dash-bg.8f16d3b604ee6b2e4793d839bce0bfb9.svg",
     "static/media/wesee_logo.png": "/static/media/wesee_logo.2baef6747b8b2da064fb.png",
     "static/media/digital-7.ttf": "/static/media/digital-7.93911ab167c943140756.ttf",
@@ -23,15 +25,19 @@
     "static/media/view-plot.svg": "/static/media/view-plot.19231143ac44375c061c40f1f8cecd21.svg",
     "static/media/logout.svg": "/static/media/logout.4fbff1636436b8d3c59fccbd48ac58c7.svg",
     "index.html": "/index.html",
+    "static/media/map_loc.svg": "/static/media/map_loc.57660a213a2a866706a7.svg",
+    "static/media/print.svg": "/static/media/print.35716a0b16670af5e36edc5ebee626d5.svg",
     "static/media/download-arrow.svg": "/static/media/download-arrow.d4f121088cbdc76790a60cc96df497dc.svg",
-    "main.f9171bfb.css.map": "/static/css/main.f9171bfb.css.map",
-    "main.a5db74d8.js.map": "/static/js/main.a5db74d8.js.map",
+    "static/media/homepage.svg": "/static/media/homepage.7d592d5f1acaeda6e8fd9f9b39fb13fc.svg",
+    "static/media/arrow.svg": "/static/media/arrow.65692986547eeb8818d09611c574ea12.svg",
+    "main.212cac2f.css.map": "/static/css/main.212cac2f.css.map",
+    "main.a5774ff5.js.map": "/static/js/main.a5774ff5.js.map",
     "213.ab9994fb.chunk.js.map": "/static/js/213.ab9994fb.chunk.js.map",
     "732.11887481.chunk.js.map": "/static/js/732.11887481.chunk.js.map",
     "453.bc46723e.chunk.js.map": "/static/js/453.bc46723e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f9171bfb.css",
-    "static/js/main.a5db74d8.js"
+    "static/css/main.212cac2f.css",
+    "static/js/main.a5774ff5.js"
   ]
 }
